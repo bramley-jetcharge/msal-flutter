@@ -1,19 +1,6 @@
 group 'uk.co.moodio.msal_flutter'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    ext.kotlin_version = '1.4.31'
-    repositories {
-        google()
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
 rootProject.allprojects {
     repositories {
         google()
@@ -28,6 +15,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace "uk.co.moodio.msal_flutter"
     compileSdkVersion 30
 
     sourceSets {
@@ -42,6 +30,5 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.microsoft.identity.client:msal:2.2.3'
 }
